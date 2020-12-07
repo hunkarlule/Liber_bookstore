@@ -1,0 +1,176 @@
+<!-- 
+//==============================================
+// Name:           Hunkar Lule
+// Student Number: 153780192
+// Email:          hlule@myseneca.ca
+// Section:        NCC
+// Assign./Test:   Assignment-5
+// Date:		       2020-12-03
+//============================================== 
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>WEB222 Store</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" type="text/css" />
+  <link rel="stylesheet" href="contact_form.css" type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/46bbca762f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <div class="fullscreen">
+      <div id="logo">
+        <h3>Lego, ergo sum</h3>
+        <a href="./index.html"><img src="./images/LIBER-animated.gif" alt="LIBER" height="80" /></a>
+      </div>
+      <div id="search-wrapper">
+        <div id="serach-area">
+          <div class="align-search">
+            <input onclick="doQuickSearch()" class="quick-search-input-box" id="quick-search-input"
+              placeholder="Find your best friend" value="" />
+            <button id="book-search-button">
+              <i class="material-icons md-18 quick-search-button">search</i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="user-options">
+        <div class="shopping-cart">
+          <i class="material-icons md-24 cart">shopping_cart</i>
+          <div class="cart-items"></div>
+        </div>
+        <button id="sign-in"><i class="material-icons">account_circle</i>SIGN IN</button>
+      </div>
+    </div>
+    <div class="smallscreen">
+      <div class="ss-wrapper">
+        <div class="ss-search-area">
+          <div class="ss-align-search">
+            <input onclick="doQuickSearch()" class="quick-search-input-box-2" placeholder="Find your best friend" />
+            <button><i class="material-icons md-18 quick-search-button-2">search</i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="form">
+      <form action="https://httpbin.org/post" class="contact-form" method="post">
+        <label for="first-name">First Name</label>
+        <input type="text" name="first-name" id="first-name" autocomplete="given-name" placeholder="First Name" required
+          maxlength="50" minlength="2" pattern="[A-Za-z0-9 -]{2,50}" title="Letters and Numbers only, minimum 2 characters"  autofocus>
+        <label for="last-name">Last Name</label>
+        <input type="text" name="last-name" id="last-name" autocomplete="family-name" placeholder="Last Name" required
+        maxlength="50" minlength="2" pattern="[A-Za-z0-9 -]{2,50}" title="Letters and Numbers only, minimum 2 characters" >
+        <label for="email">Email Address</label>
+        <input type="email" name="email" id="email-contact" autocomplete="email" placeholder="example@email.com"
+          required maxlength="50">
+        <label for="street">Street</label>
+        <input type="text" name="street" id="street" autocomplete="street-address" placeholder="Street Address" required > 
+        <label for="city">City</label>
+        <input list="cities" name="city" id="city" placeholder="City" required maxlength="50">
+        <datalist id="cities">
+          <option value="Toronto">
+          <option value="Montréal">
+          <option value="Vancouver">
+          <option value="Ottawa">
+          <option value="Calgary">
+          <option value="Edmonton">
+          <option value="Hamilton">
+          <option value="Winnipeg">
+          <option value="Québec">
+        </datalist>
+        <label for="postal">Postal Code</label>
+        <input type="text" name="postal" id="postal" autocomplete="postal-code" placeholder="Postal Code"
+          pattern="[a-zA-Z][0-9][a-zA-Z] ?[0-9][a-zA-Z][0-9]" maxlength="7" minlength="6" required>
+
+        <label>Contact Reason</label>
+        <div class="radio">
+          <div class="radio-btns">
+            <input class="radio-button" type="radio" name="contact-reason" id="question" checked=false value="Question"  required>
+            <label for="question">Question</label>
+            <input class="radio-button" type="radio" name="contact-reason" id="comment" checked=false value="Comment" required>
+            <label for="comment">Comment</label>
+            <input class="radio-button" type="radio" name="contact-reason" id="order-problem" checked=false  value="Order Problem" required>
+            <label for="order-problem">Order Problem</label>
+          </div>
+          <div class="order-number">
+            <input type="text" name="order-num" id="order-num" placeholder="Enter order # here"
+              pattern="[0-9]{6}" >
+          </div>
+          <div class="text-area">
+            <textarea name="contact-reason-detail" id="contact-reason-detail" rows="3" 
+              placeholder="Please, enter details here" maxlength="2500"></textarea>
+            <!-- <textarea name="comment-box" id="comment-box" rows="3" 
+              placeholder="Please, type your comment here"></textarea>
+            <textarea name="order-box" id="order-box" rows="6" 
+              placeholder="Please, type your order problem and related order details here"></textarea> -->
+          </div>
+        </div>
+        <input type="text" name="student-name" id="student-name" value="Hunkar Lule" hidden>
+        <div class="form-btns">
+          <button id="submit-btn" type="submit">Submit</button>
+          <button id="reset-btn">Reset</button>
+        </div>
+      </form>
+    </div>
+  </main>
+  <footer>
+    <div class="center-items">
+      <div id="about-liber">
+        <h2>ABOUT LIBER</h2>
+        <ul style="list-style-type:none;">
+          <li>Company</li>
+          <li>Terms of Use</li>
+          <li>Privacy Policy</li>
+        </ul>
+      </div>
+
+      <div id="customer-services">
+        <h2>CUSTOMER SERVICES</h2>
+        <ul style="list-style-type:none;">
+          <li>Help</li>
+          <li>Catalog</li>
+          <li><a href="./contact.html"> Contact Us</a></li>
+        </ul>
+      </div>
+      <div id="subscription-social">
+        <div id="subscription">
+          <h2>SUBSCRIBE</h2>
+          <div class="subscribe-button">
+            <form action="https://formspree.io/mvovbega" method="POST" name="subscribe" class="sub-form"> <input
+                type="email" name="email" autocomplete="email" id="subscription-email"
+                placeholder="Enter  your email" required>
+              <button type="submit" id="subscription-email-button">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div id="social-media">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!--
+      Load all of our scripts. NOTE: the order matters if later scripts
+      depend on things defined in earlier scripts.
+    -->
+  <script src="./books-data.js"></script>
+  <script src="./Clamp.js"></script>
+  <script src="./fill-books.js"></script>
+  <script src="./index.js"></script>
+  <script src="./script.js"></script>
+</body>
+
+</html>
