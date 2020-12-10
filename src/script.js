@@ -1,13 +1,5 @@
 /* Add any JavaScript you need to this file. */
 window.onload = function() {
-  // to set all radio buttons unchecked and all contact reason text  areas invisible.
-
-  document.querySelector('#question').checked = false;
-  document.querySelector('#comment').checked = false;
-  document.querySelector('#order-problem').checked = false;
-  document.querySelector('.order-number').style.display = 'none';
-  document.querySelector('#contact-reason-detail').style.display = 'none';
-
   //event listener: to adjust the form in regard to selected contact reason
   let radioButtons = Array.from(document.querySelectorAll('.radio-button'));
   radioButtons.forEach(function(button) {
@@ -37,13 +29,9 @@ window.onload = function() {
     });
   });
 
-  //event listener: to reset the form
+  // event listener: to hide the order number  text field and contact reason detail text fields when reset is clicked.
   let resetButton = document.querySelector('#reset-btn');
-  resetButton.addEventListener('click', function(e) {
-    document.querySelector('.contact-form').reset();
-    document.querySelector('#question').checked = false;
-    document.querySelector('#comment').checked = false;
-    document.querySelector('#order-problem').checked = false;
+  resetButton.addEventListener('click', function() {
     document.querySelector('#contact-reason-detail').style.display = 'none';
     document.querySelector('.order-number').style.display = 'none';
   });

@@ -37,7 +37,7 @@ body {
 }
 
 .radio-btns label {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Noto Sans JP', Helvetica, Arial, Verdana, sans-serif;
   font-size: 1em;
 }
 
@@ -45,7 +45,7 @@ body {
 textarea {
   width: 100%;
   padding: 0.3em;
-  font-size: 1.5em;
+  font-size: 1.2em;
   border: 1px solid rgb(206, 212, 218);
   border-radius: 0.25em;
 }
@@ -94,13 +94,6 @@ textarea {
   padding-left: 8px;
 }
 
-/* .order-number {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  align-items: center;
-  padding-bottom: 8px;
-} */
-
 .order-number {
   display: none;
 }
@@ -114,6 +107,13 @@ textarea {
 ::placeholder {
   font-size: 0.8em;
   font-family: 'Noto Sans JP', Helvetica, Arial, Verdana, sans-serif;
+}
+
+textarea {
+  font-family: Helvetica, Arial, Verdana, sans-serif;
+}
+input[type='text'] {
+  font-family: Helvetica, Arial, Verdana, sans-serif;
 }
 
 @media screen and (max-width: 750px) {

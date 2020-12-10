@@ -26,9 +26,9 @@ window.onload = function() {
   });
 
   // filtering by category in small screen
-  let dorpdownMenuItems = Array.from(document.querySelectorAll('.dropdown-content a'));
-  console.log(dorpdownMenuItems);
-  dorpdownMenuItems.forEach(function(item) {
+  let dropdownMenuItems = Array.from(document.querySelectorAll('.dropdown-content a'));
+  // console.log(dorpdownMenuItems);
+  dropdownMenuItems.forEach(function(item) {
     item.addEventListener('click', function() {
       selectedFilter(item);
     });
@@ -71,7 +71,7 @@ window.onload = function() {
 
   // quick search in big screen
   let itemSearchButton = document.querySelector('.quick-search-button');
-  console.log(itemSearchButton);
+  // console.log(itemSearchButton);
   itemSearchButton.addEventListener('click', function() {
     let userInput = document.querySelector('.quick-search-input-box').value;
     filterBooks(userInput);
@@ -79,7 +79,7 @@ window.onload = function() {
 
   // quick search in small screen
   let itemSearchButton2 = document.querySelector('.quick-search-button-2');
-  console.log(itemSearchButton2);
+  // console.log(itemSearchButton2);
   itemSearchButton2.addEventListener('click', function() {
     let userInput = document.querySelector('.quick-search-input-box-2').value;
     filterBooks(userInput);
@@ -102,7 +102,7 @@ window.onload = function() {
   menuItems2.forEach(function(item) {
     item.addEventListener('click', function() {
       menuItems2.forEach(function(el) {
-        console.log(el.classList);
+        // console.log(el.classList);
         el.classList.remove('selected');
       });
       item.className += ' selected';
